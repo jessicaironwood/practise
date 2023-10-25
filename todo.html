@@ -1,0 +1,146 @@
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- JS -->
+   <script defer src="script.js"></script>
+    <title>Jessica's Todo App</title>
+
+</head>
+<body>
+    
+    <h1>Jessica</h1>
+
+    <input id="todo-title" type="text" />
+<button onclick="addTodo();">Add todo</button>
+
+<div>Get groceries</div>
+<div>Do stuff</div>
+<div>Think</div>
+
+<button onclick="mark-done();" id="todo-button">Mark as done</button>
+
+<br>
+<br>
+
+<script>
+let todos = ['Learn', 'Clean', 'The', 'Something'];
+   
+
+     todos.forEach(function (todoTitle) {
+
+        let element = document.createElement('div');
+    element.innerText = todoTitle;
+    document.body.appendChild(element);
+
+     });
+
+
+     function addTodo() {
+        let textbox = document.getElementById('todo-title')
+        let title = textbox.value;
+        todos.push(title);
+     }
+
+     function mark-done() {
+        element.innerText = 'done';
+     }
+
+</script>
+    
+
+<script>
+    let value1 = 4;
+    let value2 = 5;
+    let value3 = 3;
+</script>
+
+
+<script class="date">
+    let month = "October";
+    let dayOfMonth =  '18';
+    let year =  2023;
+</script>
+
+
+<script class="age">
+    let message = "I am ";
+    let age =  27;
+    let yearsOld =  ' years old';
+</script>
+
+
+<script>
+
+    var button = document.createElement("button")
+    button.innerHTML = "Click Me"
+
+    var body = document.getElementsByTagName("body")[0];
+    body.appendChild(button);
+
+</script>
+
+<br>
+<br>
+
+<script>
+
+    function toUpper(word) {
+        return word.toUpperCase();
+    }
+
+    let text = ['dgger', 'CleGGUhgpkrpan', 'TjojOKhe', 'SoinJHIRWhfiefwg'];
+    
+    
+    text.forEach((t) =>  {
+        console.log(t)
+        let element = document.createElement('div');
+        element.innerText = toUpper(t);
+        document.body.appendChild(element);
+        console.log(toUpper(t));
+    })
+   
+
+</script>
+   <br>
+<script>
+
+    let info = ['bllaaa ', 'blaa ', 'blooo ']
+
+    function arrayDouple(r) {
+        return r.repeat(2)
+    }
+    info.forEach((r) => {
+        let element = document.createElement('div');
+        element.innerText = arrayDouple(r);
+        document.body.appendChild(element);
+        console.log(r.repeat(2));
+    })
+
+</script>
+
+
+
+<br>
+
+<script>
+
+
+function arraySum(yhteen) {
+    let sum = 0;
+    yhteen.forEach((y) => {
+        sum = sum + y;
+    })
+    console.log(sum);
+}
+
+arraySum([4, 6, 12, 7])
+
+</script>
+
+
+
+</body>
+</html>
