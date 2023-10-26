@@ -12,3 +12,13 @@ let etukirjain = yaName.slice(0,1);
 let loppuOsa = yaName.slice(1,name.length);
 let msg = "Hello there, ";
 console.log(msg + etukirjain.toUpperCase() + loppuOsa.toLowerCase());
+
+// toimiva
+
+var yaName = prompt("What's your name?");
+var etukirjain = yaName.slice(0,1);
+var isoEtukirjain = etukirjain.toUpperCase();
+var loppu = yaName.slice(1,yaName.length);
+var loppu = loppu.toLowerCase();
+var msg = "Hello there, ";
+console.log(msg + isoEtukirjain + loppu);
