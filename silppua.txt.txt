@@ -1,5 +1,14 @@
 let yaName = prompt("What's your name?");
 let etukirjain = yaName.slice(0,1);
 let loppuOsa = yaName.slice(1,name.length);
+loppuOsa = loppuOsa.toLowerCase();
 let msg = "Hello there, ";
-console.log(msg + etukirjain.toUpperCase() + yaName.slice(1,name.length));
+console.log(msg + etukirjain.toUpperCase() + loppuOsa);
+
+// toinen yritys
+
+let yaName = prompt("What's your name?");
+let etukirjain = yaName.slice(0,1);
+let loppuOsa = yaName.slice(1,name.length);
+let msg = "Hello there, ";
+console.log(msg + etukirjain.toUpperCase() + loppuOsa.toLowerCase());
