@@ -7,26 +7,19 @@
 <body>
     
     <script>
-        let dogAge = prompt("What's your dog's age?");
-        let humanAge = (dogAge - 2) * 4 + 21;
-
-
-        // tässä muutaman yrityksen jälkeen:
-        // alert("Your dog's age is " + humanAge + " in human years.")
-    
-        // if (isNaN(dogAge) || dogAge > 20 || dogAge < 0) {
-        //     text = "soo soo"
-        // }
-
-        // else {
-        //     text = "hell yeah, now we got business"
-        // }
-
-        // alert ei toimi tuol silmukan sisäl
-        // mitä jos olis joku sen tyyppinen silmukka while jtn ---> niin
-        // tää alert, mut jos epätosi tai break tms niin --->
-        // joku virheilmotus???
-
+       
+         let dogAge = prompt("What's your dog's age?"); 
+         let dogAgeInt = parseInt(dogAge);
+         let text = "soo soo"
+         let humanAge = null
+         
+         if ( dogAgeInt > -1 && dogAgeInt < 21) {
+            humanAge = (dogAgeInt - 2) * 4 + 21;
+            console.log(humanAge);
+          } else{
+            console.log(text);
+          }
+        
         
     </script>
 
