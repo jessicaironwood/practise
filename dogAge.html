@@ -10,14 +10,14 @@
        
          let dogAge = prompt("What's your dog's age?"); 
          let dogAgeInt = parseInt(dogAge);
-         let text = "soo soo"
+         let text = "Please give a number 0-20"
          let humanAge = null
          
          if ( dogAgeInt > -1 && dogAgeInt < 21) {
             humanAge = (dogAgeInt - 2) * 4 + 21;
-            console.log(humanAge);
+            alert("Your dog is " + humanAge + " years old in human years.");
           } else{
-            console.log(text);
+            alert(text);
           }
         
         
