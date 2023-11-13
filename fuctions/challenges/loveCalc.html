@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JS
+    <link rel="script" href="script.js"> -->
+
+    <title>Doc Love's Love Calculator</title>
+
+</head>
+<body>
+    <h1>Dr. Love's Love Calculator</h1>
+
+    <div class="cupid">
+    <img src="images/cupid.webp" alt="cupid-img">
+    </div>
+
+    <h2>Please enter your name and your chrush's name bellow</h2>
+
+    <p> You can calculate the changes of your relationship working between yourself
+        and the special someone that your heart desires. Orci nulla pellentesque dignissim enim sit amet 
+        venenatis. Mi tempus imperdiet nulla malesuada pellentesque 
+        elit eget. Ultrices tincidunt arcu non sodales neque sodales 
+        ut. Eget lorem dolor sed viverra ipsum nunc aliquet.
+    </p>
+
+    <br>
+
+    <h4>Make your calculation!</h4>
+
+    <br>
+
+    <input type="text" id="name1">
+    <input type="text" id="name2">
+    <!-- <a href="loveCalcRsesult.html"> -->
+    <button onclick="loveCalc()"> Calculate! </button>
+    <!-- </a> -->
+
+    
+
+    <script>
+        let name1 = prompt("What's your name?");
+        let name2 = prompt("What's their name?");
+        let oojoku = document.getElementById("name1");
+        oojoku.value = name1
+        let jokumuu = document.getElementById("name2");
+        jokumuu.value = name2
+
+        function loveCalc() {
+            let loveScore =  Math.random() * 100;
+            loveScore = Math.floor(loveScore) + 1;  
+            if  (loveScore > 70) {
+                alert("Your love score is " + loveScore + " % You love each other like capitalisim loves using you!");
+            }
+             if (loveScore > 30 && loveScore <= 70) {
+                 alert("Your love score is " + loveScore + " %");
+             }
+            if (loveScore <= 30) {
+                alert("Your love score is " + loveScore + "%, just maybe don't");
+            }
+            
+    }
+    </script>
+
+    <hr>
+
+</body>
+</html>

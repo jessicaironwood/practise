@@ -1,0 +1,50 @@
+<script>
+
+//Create your function below this line.
+//The first parameter should be the weight and the second should be the height.
+function bmiCalculator(weight, height) {
+  var weightVar = parseFloat(weight);
+  var heightVar = parseFloat(height);
+  var bmi = weightVar / (heightVar * heightVar);
+  return Math.round(bmi);
+}
+
+// uus versio, joka antaa viestejä tuloksesta riippuen, if-harjoitus
+
+function bmiCalculator (weight, height) {
+    var weightVar = parseFloat(weight);
+    var heightVar = parseFloat(height);
+    var bmi = weightVar / (heightVar * heightVar);
+    bmi = Math.round(bmi);
+    if (bmi < 18.5) {
+      return "Your BMI is " + bmi + ", so you are underweight."
+    } if (bmi >= 18.5 && bmi <= 24.9) {
+        return "Your BMI is " + bmi + ", so you have a normal weight."
+    } if (bmi > 24.9) {
+        return "Your BMI is " + bmi + ", so you are overweight."
+    }
+}
+
+/* If my weight is 65Kg and my height is 1.8m, I should be able to call your function like this:
+
+var bmi = bmiCalculator(65, 1.8); 
+
+bmi should equal 20 when it's rounded to the nearest whole number.
+Your challenge is to create a function that takes weight and height as
+ inputs and gives the calculated BMI value as an output. The output should be
+  rounded to the nearest whole number.
+
+The first parameter should be the weight and the second should be the height.
+
+NOTE: You do not need to write any alerts or prompts or console logs. 
+Your code should only contain the function, the result has to be returned 
+by the function. You do not need to call the function.
+
+*/
+
+//var weightVar = prompt ("Please input the weight in kg");
+// var heightVar = prompt ("Please input the height in meters");
+// var bmiCalculator = weightVar / (heightVar ** 2);
+// var lbmiCalculator = Math.round(bmiCalculator)
+// console.log(lbmiCalculator)
+</script>

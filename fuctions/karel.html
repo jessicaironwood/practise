@@ -1,0 +1,401 @@
+<script>
+function putBeeperLine(){
+    putBeeper();
+    while(frontIsClear()) {
+       move();
+       putBeeper();
+    }
+ }
+ function turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+    }
+
+      
+function turnAround(){
+    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+    }
+    
+    
+ function goToEnd() {
+    turnRight();
+    turnRight();
+    move();
+   // while(frontIsClear()) {
+  //    move();
+   // }
+    }
+ 
+ function main() {
+    putBeeperLine();
+    while(frontIsBlocked()){
+    turnLeft();
+    move();
+    turnLeft();
+    putBeeperLine();
+    turnRight();
+    move();
+    turnRight();
+    putBeeperLine();
+    }
+    goToEnd();
+ }
+ 
+
+
+ <!--
+   tässä on JS oikea syntax repeat-komennolle
+   function main(){
+   repeat(4){
+      move();
+      move();
+      putBeeper();
+      turnLeft();
+   }
+} -->
+
+<!-- //This program will make 
+//karel pick up a pile of
+//beepers no matter how big
+//the pile is
+function main() {
+   move();
+   while(beepersPresent()) {
+      pickBeeper();
+   }
+   move();
+} -->
+
+<!-- function main() {
+   putBeeperLine();
+}
+
+function putBeeperLine(){
+   while(frontIsClear()) {
+      putBeeper();
+      move();
+   }
+   putBeeper();
+} -->
+
+
+<!-- uus versio
+//Make Karel fill the world
+//with beepers
+function putBeeperLine(){
+    putBeeper();
+    while(frontIsClear()) {
+       move();
+       putBeeper();
+    }
+ }
+ function turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+    }
+
+      
+function turnAround(){
+    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+    }
+    
+    
+ function goToEnd() {
+    turnRight();
+    turnRight();
+    turnRight();
+    move();
+    while(frontIsClear()) {
+      move();
+    }
+    }
+    
+ //var i = 0;
+ 
+goToEnd();
+       
+    //while(frontIsBlocked()&& var i < 3){
+   // turnLeft();
+    //move();
+    //turnLeft();
+   // putBeeperLine();
+   // turnRight();
+   // move();
+   // i++;
+   // turnRight();
+   // putBeeperLine();
+   //}
+   
+   // goToEnd();
+ } -->
+ //Make Karel fill the world
+//with beepers
+function putBeeperLine(){
+    putBeeper();
+    while(frontIsClear()) {
+       move();
+       putBeeper();
+    }
+ }
+ function turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+    }
+
+      
+function turnAround(){
+    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+    }
+    
+    
+ function goToEnd() {
+    turnRight();
+    turnRight();
+    turnRight();
+    move();
+    while(frontIsClear()) {
+      move();
+    }
+    }
+    
+ //var i = 0;
+ 
+ function main() {
+    putBeeperLine();
+   
+      turnLeft();
+      move();
+      turnLeft();
+      putBeeperLine();
+      turnRight();
+      move();
+      turnRight();
+      putBeeperLine();
+      
+      turnLeft();
+      move();
+      turnLeft();
+      putBeeperLine();
+      turnRight();
+      move();
+      turnRight();
+      putBeeperLine();
+      
+      turnLeft();
+      move();
+      turnLeft();
+      putBeeperLine();
+      turnRight();
+      move();
+      turnRight();
+      putBeeperLine();
+      
+      turnLeft();
+      move();
+      turnLeft();
+      putBeeperLine();
+      
+      turnAround();
+      turnRight();
+      goToEnd();
+       
+    //while(frontIsBlocked()&& var i < 3){
+   // turnLeft();
+    //move();
+    //turnLeft();
+   // putBeeperLine();
+   // turnRight();
+   // move();
+   // i++;
+   // turnRight();
+   // putBeeperLine();
+   //}
+   
+   // goToEnd();
+ }
+
+ <!-- Karel 5x5 maailmassa laittaa diakonaalissa beeperit
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/ -->
+function main(){
+   putBeeper();
+   goUpLeft();
+   move();
+   putBeeper();
+   moveEnd();
+   goUpLeft();
+   turnAround();
+   move2();
+   
+   moveEnd();
+   goUpRight();
+   turnAround();
+   
+   move3();
+   moveEnd();
+   
+   goUpLeft();
+   putBeeper();
+}
+
+function move2(){
+    move();
+    move();
+    putBeeper();
+}
+
+function move3(){
+    move();
+    move();
+    move();
+    putBeeper();
+}
+
+function move4(){
+    move();
+    move();
+    move();
+    move();
+    putBeeper();
+}
+
+function moveEnd(){
+    while(frontIsClear()) {
+       move();
+    }
+}
+
+function turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+    
+function goUpRight(){
+    turnRight();
+    move();
+    turnLeft();
+}
+
+function goUpLeft(){
+    turnLeft();
+    move();
+    turnRight();
+}
+
+function turnAround(){
+    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+    }
+
+<!-- Karel tekee shakkiruudun 5x5 maailmasta -->
+function main(){
+   putBeeper();
+   move2();
+   move2();
+   goUpLeft();
+   doStuff();
+   goUpLeft();
+   doStuff();
+}
+
+function move1(){
+    move();
+    putBeeper();
+}
+
+function move2(){
+    move();
+    move();
+    putBeeper();
+}
+
+function move3(){
+    move();
+    move();
+    move();
+    putBeeper();
+}
+
+function move4(){
+    move();
+    move();
+    move();
+    move();
+    putBeeper();
+}
+
+function moveEnd(){
+    while(frontIsClear()) {
+       move();
+    }
+}
+
+function turnRight(){
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+    
+function goUpRight(){
+    turnRight();
+    move();
+    turnLeft();
+}
+
+function goUpLeft(){
+    turnLeft();
+    move();
+    turnRight();
+}
+
+function moveDiagonal(){
+    move();
+    turnLeft();
+    move();
+    putBeeper();
+    turnRight();
+}
+
+function moveDiagonalR(){
+    move();
+    turnRight();
+    move();
+    putBeeper();
+    turnLeft();
+}
+
+function turnAround(){
+    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+    }
+    
+function doStuff(){
+   turnAround();
+   move1();
+   move2();
+   moveDiagonalR();
+   turnAround();
+   move2();
+   move2();
+    } 
+</script>
