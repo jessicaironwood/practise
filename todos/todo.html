@@ -12,13 +12,13 @@
     <h1>Jessica</h1>
 
     <input id="todo-title" type="text" />
-<button onclick="addTodo();">Add todo</button>
+<button onclick="addTodo()">Add todo</button>
 
 <div>Get groceries</div>
 <div>Do stuff</div>
 <div>Think</div>
 
-<button onclick="mark-done();" id="todo-button">Mark as done</button>
+<button onclick="" id="todo-button">Mark as done</button>
 
 <br>
 <br>
@@ -27,13 +27,13 @@
 let todos = ['Learn', 'Clean', 'The', 'Something'];
    
 
-     todos.forEach(function (todoTitle) {
+     todos.forEach(function (todoTitle)) {
 
         let element = document.createElement('div');
     element.innerText = todoTitle;
     document.body.appendChild(element);
 
-     });
+     };
 
 
      function addTodo() {
@@ -42,14 +42,18 @@ let todos = ['Learn', 'Clean', 'The', 'Something'];
         todos.push(title);
      }
 
-     function mark-done() {
+
+    //  array objects
+     function markDone() {
+        let todoObject = 
+        todos.
         element.innerText = 'done';
      }
 
 </script>
     
 
-<script>
+<!-- <script>
     let value1 = 4;
     let value2 = 5;
     let value3 = 3;
@@ -136,7 +140,7 @@ function arraySum(yhteen) {
     console.log(sum);
 }
 
-arraySum([4, 6, 12, 7])
+arraySum([4, 6, 12, 7]) -->
 
 </script>
 

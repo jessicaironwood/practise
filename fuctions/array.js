@@ -8,7 +8,7 @@
 
 let userName = prompt("What's your name?")
 const guestList = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
-if (guestList.includes(userName) === true) {
+if (guestList.includes(userName)) {
     alert("Welcome!")
 } else {
     alert("Sorry, maybe next time.")
