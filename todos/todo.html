@@ -16,40 +16,41 @@
     <input id="todo-title" type="text" />
     <button onclick="addTodo()">Add todo</button>
 
-    <!-- <div>Get groceries</div>
-    <div>Do stuff</div>
-    <div>Think</div> -->
+
 
     <button onclick="markDone()" id="todo-button">Mark as done</button>
 
     <br>
+    </script>
     <br>
+
+    <div id="todo-list"></div>
 
     <script>
         let todos = ['Learn', 'Clean', 'The', 'Something'];
 
-
-        // todos.forEach(function (todoTitle)) {
-
-        //     let element = document.createElement('div');
-        //     element.innerText = todoTitle;
-        //     document.body.appendChild(element);
-
-        // }
-
-        todos.forEach((todoTitle) => {
-            let element = document.createElement('div');
-            element.innerText = todoTitle;
-            document.body.appendChild(element);
-        })
+        render();
 
 
         function addTodo() {
             let textbox = document.getElementById('todo-title')
             let title = textbox.value;
             todos.push(title);
+
+            render();
         }
 
+
+        function render() {
+            let todoList = document.getElementById("todo-list")
+            todoList.innerHTML = "";
+
+            todos.forEach((todoTitle) => {
+                let element = document.createElement('div');
+                element.innerText = todoTitle;
+                todoList.appendChild(element);
+            })
+        }
 
         //  array objects tehdyille oma array
         // ehkä map tai filter vois toimia tässä?? tai .pop .shift???
@@ -57,8 +58,26 @@
         function markDone() {
             // const doneList = todos
             // .map()
-            document.getElementById('todo-title').innerText = 'done';
+            document.getElementById('todo-button').innerText = 'Done';
+            console.log("joku heippa teksti")
 
+        }
+
+    </script>
+
+    <div id="counter">0</div>
+    <button id="up" onclick="clickUp()">Up</button>
+    <button id="down" onclick="clickDown()">Down</button>
+
+    <script>
+        let count = 0;
+        function clickUp() {
+            ++count;
+            document.getElementById('counter').innerText = count
+        }
+        function clickDown() {
+            --count;
+            document.getElementById('counter').innerText = count
         }
 
     </script>
@@ -117,6 +136,14 @@
 //         console.log(toUpper(t));
 //     })
    
+ // todos.forEach(function (todoTitle)) {
+
+        //     let element = document.createElement('div');
+        //     element.innerText = todoTitle;
+        //     document.body.appendChild(element);
+
+        // }
+
 
 // </script>
 //    <br>
