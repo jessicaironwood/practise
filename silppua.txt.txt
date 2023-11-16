@@ -22,3 +22,105 @@ var loppu = yaName.slice(1,yaName.length);
 var loppu = loppu.toLowerCase();
 var msg = "Hello there, ";
 console.log(msg + isoEtukirjain + loppu);
+
+
+uutta silppuu
+
+
+    // <!-- <script>
+//     let value1 = 4;
+//     let value2 = 5;
+//     let value3 = 3;
+// </script>
+
+
+// <script class="date">
+//     let month = "October";
+//     let dayOfMonth =  '18';
+//     let year =  2023;
+// </script>
+
+
+// <script class="age">
+//     let message = "I am ";
+//     let age =  27;
+//     let yearsOld =  ' years old';
+// </script>
+
+
+// <script>
+
+//     var button = document.createElement("button")
+//     button.innerHTML = "Click Me"
+
+//     var body = document.getElementsByTagName("body")[0];
+//     body.appendChild(button);
+
+
+//     document.title = "New Title"
+// </script>
+
+// <br>
+// <br>
+
+// <script>
+
+//     function toUpper(word) {
+//         return word.toUpperCase();
+//     }
+
+//     let text = ['dgger', 'CleGGUhgpkrpan', 'TjojOKhe', 'SoinJHIRWhfiefwg'];
+    
+    
+//     text.forEach((t) =>  {
+//         console.log(t)
+//         let element = document.createElement('div');
+//         element.innerText = toUpper(t);
+//         document.body.appendChild(element);
+//         console.log(toUpper(t));
+//     })
+   
+ // todos.forEach(function (todoTitle)) {
+
+        //     let element = document.createElement('div');
+        //     element.innerText = todoTitle;
+        //     document.body.appendChild(element);
+
+        // }
+
+
+<!-- </script>
+   <br>
+<script> -->
+
+//     let info = ['bllaaa ', 'blaa ', 'blooo ']
+
+//     function arrayDouple(r) {
+//         return r.repeat(2)
+//     }
+//     info.forEach((r) => {
+//         let element = document.createElement('div');
+//         element.innerText = arrayDouple(r);
+//         document.body.appendChild(element);
+//         console.log(r.repeat(2));
+//     })
+
+<!-- </script>
+
+
+
+<br>
+
+<script> -->
+
+
+// function arraySum(yhteen) {
+//     let sum = 0;
+//     yhteen.forEach((y) => {
+//         sum = sum + y;
+//     })
+//     console.log(sum);
+// }
+
+// arraySum([4, 6, 12, 7]) -->
+

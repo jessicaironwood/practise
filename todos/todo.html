@@ -13,6 +13,8 @@
 
     <h1>Jessica</h1>
 
+    <h4>To Do</h4>
+
     <input id="todo-title" type="text" />
     <button onclick="addTodo()">Add todo</button>
 
@@ -27,14 +29,14 @@
     <div id="todo-list"></div>
 
     <script>
-        let todos = ['Learn', 'Clean', 'The', 'Something'];
+        const todos = ['Learn', 'Clean', 'The', 'Something'];
 
         render();
 
 
         function addTodo() {
-            let textbox = document.getElementById('todo-title')
-            let title = textbox.value;
+            const textbox = document.getElementById('todo-title')
+            const title = textbox.value;
             todos.push(title);
 
             render();
@@ -42,28 +44,28 @@
 
 
         function render() {
-            let todoList = document.getElementById("todo-list")
+            const todoList = document.getElementById("todo-list")
             todoList.innerHTML = "";
 
             todos.forEach((todoTitle) => {
-                let element = document.createElement('div');
+                const element = document.createElement('div');
                 element.innerText = todoTitle;
                 todoList.appendChild(element);
             })
         }
 
-        //  array objects tehdyille oma array
-        // ehkä map tai filter vois toimia tässä?? tai .pop .shift???
-        //  miten käyttäjä voi merkitä tietyn tehtävän   tehdyksi? 
+
+
         function markDone() {
-            // const doneList = todos
-            // .map()
+
             document.getElementById('todo-button').innerText = 'Done';
-            console.log("joku heippa teksti")
+            console.log("well done")
 
         }
 
     </script>
+
+    <br> <br>
 
     <div id="counter">0</div>
     <button id="up" onclick="clickUp()">Up</button>
@@ -82,8 +84,21 @@
 
     </script>
 
+    <br> <br>
 
-    // <!-- <script>
+    <h4>Shopping</h4>
+
+    <div id="cart"></div>
+
+    <button id="apple">Apple</button>
+    <button id="tomato">Tomato</button>
+    <button id="eggs">Eggs</button>
+    <button id="clearCart">Clear</button>
+
+
+
+
+    <!-- <script>
 //     let value1 = 4;
 //     let value2 = 5;
 //     let value3 = 3;
