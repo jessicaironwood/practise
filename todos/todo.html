@@ -18,12 +18,10 @@
     <input id="todo-title" type="text" />
     <button onclick="addTodo()">Add todo</button>
 
-
-
     <button onclick="markDone()" id="todo-button">Mark as done</button>
 
     <br>
-    </script>
+
     <br>
 
     <div id="todo-list"></div>
@@ -90,114 +88,63 @@
 
     <div id="cart"></div>
 
-    <button id="apple">Apple</button>
-    <button id="tomato">Tomato</button>
-    <button id="eggs">Eggs</button>
-    <button id="clearCart">Clear</button>
+    <button onclick="addApple()" id="apple">Apple</button>
+    <button onclick="addTomato()" id="tomato">Tomato</button>
+    <button onclick="addEggs()" id="eggs">Eggs</button>
+    <button onclick="clearList()" id="clearCart">Clear</button>
+
+    <script>
+
+        /* yritin pienen ikuisuuden automatisoida seuraavaa pätkää, 
+        mut  päätin et sen voi tehä myöhemminki*/
 
 
 
+        function addApple() {
+            const element = document.createElement('div');
+            element.innerText = "Apple";
+            cart.appendChild(element);
+        }
 
-    <!-- <script>
-//     let value1 = 4;
-//     let value2 = 5;
-//     let value3 = 3;
-// </script>
+        function addTomato() {
+            const element = document.createElement('div');
+            element.innerText = "Tomato";
+            cart.appendChild(element);
+        }
 
+        function addEggs() {
+            const element = document.createElement('div');
+            element.innerText = "Eggs";
+            cart.appendChild(element);
+        }
 
-// <script class="date">
-//     let month = "October";
-//     let dayOfMonth =  '18';
-//     let year =  2023;
-// </script>
+        function clearList() {
 
+            cart.innerHTML = "";
 
-// <script class="age">
-//     let message = "I am ";
-//     let age =  27;
-//     let yearsOld =  ' years old';
-// </script>
+        }
 
+    </script>
 
-// <script>
+    <br> <br>
 
-//     var button = document.createElement("button")
-//     button.innerHTML = "Click Me"
+    <h4>Coverter in cm</h4>
 
-//     var body = document.getElementsByTagName("body")[0];
-//     body.appendChild(button);
+    <!-- inches to cm converter -->
+    <input id="converterInput" type="number" />
+    <button onclick="convertToCm()" id="converterBtnCm">Convert to cm</button>
+    <button onclick="convertToIn()" id="converterBtnIn">Convert to inch</button>
+    <div id="result"></div>
 
+    <script>
+        function convertToCm() {
 
-//     document.title = "New Title"
-// </script>
+        }
 
-// <br>
-// <br>
+        function convertToIn() {
 
-// <script>
-
-//     function toUpper(word) {
-//         return word.toUpperCase();
-//     }
-
-//     let text = ['dgger', 'CleGGUhgpkrpan', 'TjojOKhe', 'SoinJHIRWhfiefwg'];
-    
-    
-//     text.forEach((t) =>  {
-//         console.log(t)
-//         let element = document.createElement('div');
-//         element.innerText = toUpper(t);
-//         document.body.appendChild(element);
-//         console.log(toUpper(t));
-//     })
-   
- // todos.forEach(function (todoTitle)) {
-
-        //     let element = document.createElement('div');
-        //     element.innerText = todoTitle;
-        //     document.body.appendChild(element);
-
-        // }
-
-
-// </script>
-//    <br>
-// <script>
-
-//     let info = ['bllaaa ', 'blaa ', 'blooo ']
-
-//     function arrayDouple(r) {
-//         return r.repeat(2)
-//     }
-//     info.forEach((r) => {
-//         let element = document.createElement('div');
-//         element.innerText = arrayDouple(r);
-//         document.body.appendChild(element);
-//         console.log(r.repeat(2));
-//     })
-
-// </script>
-
-
-
-// <br>
-
-// <script>
-
-
-// function arraySum(yhteen) {
-//     let sum = 0;
-//     yhteen.forEach((y) => {
-//         sum = sum + y;
-//     })
-//     console.log(sum);
-// }
-
-// arraySum([4, 6, 12, 7]) -->
-
-
-
-
+        }
+    </script>
 
 </body>
 
