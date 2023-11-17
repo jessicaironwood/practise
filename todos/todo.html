@@ -17,7 +17,7 @@
 
     <input id="todo-title" type="text" />
     <button onclick="addTodo()">Add todo</button>
-
+    <!-- alert on tosi toimiva nappien testaukseen -->
     <button onclick="markDone()" id="todo-button">Mark as done</button>
 
     <br>
@@ -137,12 +137,22 @@
     <div id="result"></div>
 
     <script>
-        function convertToCm() {
+        const resultArr = []; // yritän saada laskelmien tulokset diviin, onko joku helpompi tapa?
 
+        function convertToCm() {
+            const numberBox = document.getElementById("converterInput");
+            const numTitle = numberBox.value;
+            const numberMeh = numTitle * 2.54;
+            const numberRounded = numberMeh.toFixed(2);
+            resultArr.push(numberRounded);
         }
 
         function convertToIn() {
-
+            const numberBox = document.getElementById("converterInput");
+            const numTitle = numberBox.value;
+            const numberMeh = numTitle / 2.54;
+            const numberRounded = numberMeh.toFixed(2);
+            resultArr.push(numberRounded);
         }
     </script>
 
