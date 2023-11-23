@@ -15,7 +15,11 @@
 
     <h4>To Do</h4>
 
+
     <input id="todo-title" type="text" />
+    <br>
+    <input id="date-picker" type="date" />
+    <br>
     <button onclick="addTodo()">Add todo</button>
     <!-- alert on tosi toimiva nappien testaukseen -->
     <button onclick="markDone()" id="todo-button">Mark as done</button>
@@ -27,27 +31,44 @@
     <div id="todo-list"></div>
 
     <script>
-        const todos = ['Learn', 'Clean', 'The', 'Something'];
+        const todos = [{
+            title: 'Learn',
+            dueDate: '2024-04-14'
+        }, {
+            title: 'Clean',
+            dueDate: '2023-11-21'
+        }, {
+            title: 'Something',
+            dueDate: '2023-12-15'
+        }];
 
+        const datePicker = document.getElementById('date-picker');
+        const dueDate = datePicker.value;
         render();
 
 
         function addTodo() {
-            const textbox = document.getElementById('todo-title')
+            const textbox = document.getElementById('todo-title');
             const title = textbox.value;
-            todos.push(title);
+
+
+            todos.push({
+                title: title,
+                dueDate: dueDate
+            });
 
             render();
         }
 
-
         function render() {
-            const todoList = document.getElementById("todo-list")
-            todoList.innerHTML = "";
+            //  reset the todo list
+            document.getElementById('todo-list').innerHTML = "";
 
-            todos.forEach((todoTitle) => {
+
+            todos.forEach((todo) => {
                 const element = document.createElement('div');
-                element.innerText = todoTitle;
+                element.innerText = todo.title + " " + todo.dueDate;
+                const todoList = document.getElementById("todo-list")
                 todoList.appendChild(element);
             })
         }
@@ -57,7 +78,7 @@
         function markDone() {
 
             document.getElementById('todo-button').innerText = 'Done';
-            console.log("well done")
+            alert("well done")
 
         }
 
@@ -93,12 +114,10 @@
     <button onclick="addEggs()" id="eggs">Eggs</button>
     <button onclick="clearList()" id="clearCart">Clear</button>
 
+    <div id="receipt"></div>
+
+
     <script>
-
-        /* yritin pienen ikuisuuden automatisoida seuraavaa pätkää, 
-        mut  päätin et sen voi tehä myöhemminki*/
-
-
 
         function addApple() {
             const element = document.createElement('div');
@@ -124,8 +143,47 @@
 
         }
 
-    </script>
+        const cartArray = [{
+            item: "Apple",
+            price: 0.5,
+            quantity: 2
+        }, {
+            item: "Tomato",
+            price: 0.3,
+            quantity: 5
+        }, {
+            item: "Orange",
+            price: 1,
+            quantity: 6
+        }, {
+            item: "Eggs",
+            price: 0.2,
+            quantity: 10
+        }];
 
+        function cartTotal() {
+
+            let cartTotalPrice = 0;
+            console.log(cartArray[0].price)
+
+            for (let i = 0; i < cartArray.length; i++) {
+                let itemPrice = cartArray[i].price * cartArray[i].quantity;
+                cartTotalPrice = cartTotalPrice + itemPrice;
+            }
+            console.log("$ " + cartTotalPrice);
+
+        }
+
+        cartTotal();
+
+        function displayReceipt() {
+            // push ja get element by id (tuotteet)
+            const element = document.createElement('div');
+            element.innerText = /* tähän tuotteiden nimet ja hinta samalla riville ja sit yhteensä summa */;
+            receipt.appendChild(element);
+        }
+
+    </script>
     <br> <br>
 
     <h4>Coverter in cm</h4>
@@ -134,27 +192,34 @@
     <input id="converterInput" type="number" />
     <button onclick="convertToCm()" id="converterBtnCm">Convert to cm</button>
     <button onclick="convertToIn()" id="converterBtnIn">Convert to inch</button>
-    <div id="result"></div>
+    <div id="result"> </div>
+
 
     <script>
-        const resultArr = []; // yritän saada laskelmien tulokset diviin, onko joku helpompi tapa?
 
         function convertToCm() {
             const numberBox = document.getElementById("converterInput");
             const numTitle = numberBox.value;
             const numberMeh = numTitle * 2.54;
             const numberRounded = numberMeh.toFixed(2);
-            resultArr.push(numberRounded);
+            const element = document.createElement('div');
+            element.innerText = numberRounded;
+            result.appendChild(element);
+
         }
-        // laskut toimii
+
         function convertToIn() {
             const numberBox = document.getElementById("converterInput");
             const numTitle = numberBox.value;
             const numberMeh = numTitle / 2.54;
             const numberRounded = numberMeh.toFixed(2);
-            resultArr.push(numberRounded);
+            const element = document.createElement('div');
+            element.innerText = numberRounded;
+            result.appendChild(element);
+
         }
     </script>
+
 
 </body>
 
