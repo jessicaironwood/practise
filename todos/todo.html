@@ -109,11 +109,13 @@
 
     <div id="cart"></div>
 
+
+    <!-- nämä napit ovat erillisiä alla olevasta receipt divistä -->
     <button onclick="addApple()" id="apple">Apple</button>
     <button onclick="addTomato()" id="tomato">Tomato</button>
     <button onclick="addEggs()" id="eggs">Eggs</button>
     <button onclick="clearList()" id="clearCart">Clear</button>
-
+    <br><br>
     <div id="receipt"></div>
 
 
@@ -164,7 +166,6 @@
         function cartTotal() {
 
             let cartTotalPrice = 0;
-            console.log(cartArray[0].price)
 
             for (let i = 0; i < cartArray.length; i++) {
                 let itemPrice = cartArray[i].price * cartArray[i].quantity;
@@ -176,15 +177,36 @@
 
         cartTotal();
 
-        function displayReceipt() {
-            // push ja get element by id (tuotteet)
-            const element = document.createElement('div');
-            element.innerText = /* tähän tuotteiden nimet ja hinta samalla riville ja sit yhteensä summa */;
-            receipt.appendChild(element);
+        /* eli kuittiin pitää saada jokaiselle tuotteelle rivi,
+           jossa näkyy tuotteen nimi, kpl hinta ja montako ostettu sekä 
+           tuoterivin yhteishinta. Lopuksi omalle riville kaikkien 
+           ostosten yhteishinta. Olen kokeillut for looppia, jota en
+            saanut toimimaan, se jostain syystä overwritesi koko listan
+            ja näytti vain viimeisen tuote rivin sekä kuitin yhteishinnan.
+            */
+
+        function writeReceipt() {
+            let itemPrice = cartArray.price * cartArray.quantity;
+            cartTotalPrice = cartTotalPrice + itemPrice;
+            element.innerText = cartArray.item + " " + cartArray.quantity + " = $" + itemPrice;
         }
 
+        function displayReceipt() {
+            document.getElementById('receipt').innerHTML = ""
+            let element = document.createElement('div');
+            receipt.appendChild(element);
+            let cartTotalPrice = 0;
+            let displayTotal = document.createElement('div');
+            cartArray.forEach(writeReceipt)
+            displayTotal.innerText = cartTotalPrice;
+            receipt.appendChild(displayTotal);
+
+        }
+
+        displayReceipt();
+
     </script>
-    <br> <br>
+    <br>
 
     <h4>Coverter in cm</h4>
 
