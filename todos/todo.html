@@ -177,7 +177,7 @@
 
         cartTotal();
 
-        /* eli kuittiin pitää saada jokaiselle tuotteelle rivi,
+        /*  kuittiin pitää saada jokaiselle tuotteelle rivi,
            jossa näkyy tuotteen nimi, kpl hinta ja montako ostettu sekä 
            tuoterivin yhteishinta. Lopuksi omalle riville kaikkien 
            ostosten yhteishinta. Olen kokeillut for looppia, jota en
@@ -185,20 +185,26 @@
             ja näytti vain viimeisen tuote rivin sekä kuitin yhteishinnan.
             */
 
-        function writeReceipt() {
-            let itemPrice = cartArray.price * cartArray.quantity;
-            cartTotalPrice = cartTotalPrice + itemPrice;
-            element.innerText = cartArray.item + " " + cartArray.quantity + " = $" + itemPrice;
-        }
+        // kuitti
 
         function displayReceipt() {
+            // reset the receipt
             document.getElementById('receipt').innerHTML = ""
+
             let element = document.createElement('div');
-            receipt.appendChild(element);
-            let cartTotalPrice = 0;
+            cartArray.forEach(() => {
+                let itemPrice = cartArray.price * cartArray.quantity;
+                let cartTotalPrice = 0;
+
+                cartTotalPrice = cartTotalPrice + itemPrice;
+                element.innerText = cartArray.item + " " + cartArray.quantity + " = $" + itemPrice;
+
+                receipt.appendChild(element);
+            })
+
+            // yhteishinta:
             let displayTotal = document.createElement('div');
-            cartArray.forEach(writeReceipt)
-            displayTotal.innerText = cartTotalPrice;
+            displayTotal.innerText = "Cart total = $" + cartTotalPrice;
             receipt.appendChild(displayTotal);
 
         }
