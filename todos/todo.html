@@ -33,31 +33,45 @@
     <script>
         const todos = [{
             title: 'Learn',
-            dueDate: '2024-04-14'
+            dueDate: '2024-04-14',
+            id: 'id1'
         }, {
             title: 'Clean',
-            dueDate: '2023-11-21'
+            dueDate: '2023-11-21',
+            id: 'id2'
         }, {
             title: 'Something',
-            dueDate: '2023-12-15'
+            dueDate: '2023-12-15',
+            id: 'id3'
         }];
 
-        const datePicker = document.getElementById('date-picker');
-        const dueDate = datePicker.value;
+
         render();
 
-
+        // todojen lisääminen
         function addTodo() {
             const textbox = document.getElementById('todo-title');
             const title = textbox.value;
 
+            const datePicker = document.getElementById('date-picker');
+            const dueDate = datePicker.value;
+
+            const id = new Date().getTime();
 
             todos.push({
                 title: title,
-                dueDate: dueDate
+                dueDate: dueDate,
+                id: id
             });
 
             render();
+        }
+
+        // todojen poisto
+        function deleteTodo(event) {
+            const deleteButton = event.target;
+            const idToDelete = deleteButton.id;
+
         }
 
         function render() {
@@ -68,13 +82,21 @@
             todos.forEach((todo) => {
                 const element = document.createElement('div');
                 element.innerText = todo.title + " " + todo.dueDate;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = "Delete";
+                deleteButton.style = 'margin-left: 12px';
+                deleteButton.onclick = deleteTodo;
+                deleteButton.id = todo.id;
+                element.appendChild(deleteButton);
+
                 const todoList = document.getElementById("todo-list")
                 todoList.appendChild(element);
             })
         }
 
 
-
+        // ei tee mitään
         function markDone() {
 
             document.getElementById('todo-button').innerText = 'Done';
@@ -85,7 +107,7 @@
     </script>
 
     <br> <br>
-
+    <!-- joku laskemisjuttu -->
     <div id="counter">0</div>
     <button id="up" onclick="clickUp()">Up</button>
     <button id="down" onclick="clickDown()">Down</button>
@@ -118,6 +140,8 @@
     <br><br>
     <div id="receipt"></div>
 
+    <!-- ostoskärryn luominen -->
+    <div id="createdCart"></div>
 
     <script>
 
@@ -145,6 +169,7 @@
 
         }
 
+        // ostoskärry
         const cartArray = [{
             item: "Apple",
             price: 0.5,
@@ -163,6 +188,29 @@
             quantity: 10
         }];
 
+
+        // uusi ostoskärry
+        const cartNewArray = [{
+            item: "Apple",
+            price: 0.5,
+            quantity: 2,
+            id: idA
+        }, {
+            item: "Tomato",
+            price: 0.3,
+            quantity: 5,
+            id: idB
+        }, {
+            item: "Orange",
+            price: 1,
+            quantity: 6,
+            id: idC
+        }, {
+            item: "Eggs",
+            price: 0.2,
+            quantity: 10,
+            id: idD
+        }];
         function cartTotal() {
 
             let cartTotalPrice = 0;
@@ -171,19 +219,32 @@
                 let itemPrice = cartArray[i].price * cartArray[i].quantity;
                 cartTotalPrice = cartTotalPrice + itemPrice;
             }
-            console.log("$ " + cartTotalPrice);
+            return "$ " + cartTotalPrice;
 
         }
-
         cartTotal();
 
-        /*  kuittiin pitää saada jokaiselle tuotteelle rivi,
-           jossa näkyy tuotteen nimi, kpl hinta ja montako ostettu sekä 
-           tuoterivin yhteishinta. Lopuksi omalle riville kaikkien 
-           ostosten yhteishinta. Olen kokeillut for looppia, jota en
-            saanut toimimaan, se jostain syystä overwritesi koko listan
-            ja näytti vain viimeisen tuote rivin sekä kuitin yhteishinnan.
-            */
+        // ostoskärryn luominen id="createdCart"
+        function createCart() {
+            let total = 0;
+            const keys = Object.keys(cartNewArray);
+
+            document.getElementById('createdCart').innerHTML = ""
+            let element = document.createElement('div');
+            cartNewArray.forEach((key) => {
+                document.getElementById("createdCart").innerHTML = key.item + " " + key.price + " " +
+                    createdCart.appendChild(displayTotal);
+
+                const addButton = document.createElement('button');
+                addButton.innerText = "Add";
+                addButton.style = 'margin-left: 12px';
+                addButton.onclick = addTodo;
+                addButton.id = key.id;
+                element.appendChild(addButton);
+            })
+        }
+
+
 
         // kuitti
 
@@ -191,21 +252,21 @@
             // reset the receipt
             document.getElementById('receipt').innerHTML = ""
 
+            // kuitti
             let element = document.createElement('div');
-            cartArray.forEach(() => {
-                let itemPrice = cartArray.price * cartArray.quantity;
-                let cartTotalPrice = 0;
+            cartArray.forEach((item) => {
+                let itemPrice = item.price * item.quantity;
 
-                cartTotalPrice = cartTotalPrice + itemPrice;
-                element.innerText = cartArray.item + " " + cartArray.quantity + " = $" + itemPrice;
+                document.getElementById("receipt").innerHTML = item.item + " " + item.quantity + " = $" + itemPrice;
 
                 receipt.appendChild(element);
+                // yhteishinta:
+                let displayTotal = document.createElement('div');
+                displayTotal.innerText = "Cart total = " + cartTotal();
+                receipt.appendChild(displayTotal);
             })
 
-            // yhteishinta:
-            let displayTotal = document.createElement('div');
-            displayTotal.innerText = "Cart total = $" + cartTotalPrice;
-            receipt.appendChild(displayTotal);
+
 
         }
 
