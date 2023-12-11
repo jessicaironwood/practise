@@ -71,6 +71,10 @@
         function deleteTodo(event) {
             const deleteButton = event.target;
             const idToDelete = deleteButton.id;
+            // tutoriaalissa 1h03min
+            todos.filter(function (todo) {
+
+            });
 
         }
 
@@ -140,8 +144,8 @@
     <br><br>
     <div id="receipt"></div>
 
-    <!-- ostoskärryn luominen -->
-    <div id="createdCart"></div>
+    <!-- ostoskärryn luominen
+    <div id="createdCart"></div> -->
 
     <script>
 
@@ -190,27 +194,27 @@
 
 
         // uusi ostoskärry
-        const cartNewArray = [{
-            item: "Apple",
-            price: 0.5,
-            quantity: 2,
-            id: idA
-        }, {
-            item: "Tomato",
-            price: 0.3,
-            quantity: 5,
-            id: idB
-        }, {
-            item: "Orange",
-            price: 1,
-            quantity: 6,
-            id: idC
-        }, {
-            item: "Eggs",
-            price: 0.2,
-            quantity: 10,
-            id: idD
-        }];
+        // const cartNewArray = [{
+        //     item: "Apple",
+        //     price: 0.5,
+        //     quantity: 0,
+        //     id: idA
+        // }, {
+        //     item: "Tomato",
+        //     price: 0.3,
+        //     quantity: 0,
+        //     id: idB
+        // }, {
+        //     item: "Orange",
+        //     price: 1,
+        //     quantity: 0,
+        //     id: idC
+        // }, {
+        //     item: "Eggs",
+        //     price: 0.2,
+        //     quantity: 0,
+        //     id: idD
+        // }];
         function cartTotal() {
 
             let cartTotalPrice = 0;
@@ -224,25 +228,26 @@
         }
         cartTotal();
 
-        // ostoskärryn luominen id="createdCart"
-        function createCart() {
-            let total = 0;
-            const keys = Object.keys(cartNewArray);
+        // ostoskärryn luominen id="createdCart", array= cartNewArray,1h01min
+        // function createdCart() {
+        //     let total = 0;
+        //     const keys = Object.keys(cartNewArray);
 
-            document.getElementById('createdCart').innerHTML = ""
-            let element = document.createElement('div');
-            cartNewArray.forEach((key) => {
-                document.getElementById("createdCart").innerHTML = key.item + " " + key.price + " " +
-                    createdCart.appendChild(displayTotal);
+        //     document.getElementById('createdCart').innerHTML = ""
+        //     let element = document.createElement('div');
+        //     cartNewArray.forEach((key) => {
+        //         document.getElementById("createdCart").innerHTML = key.item + " " + key.price + " " +
+        //             createdCart.appendChild(displayTotal);
 
-                const addButton = document.createElement('button');
-                addButton.innerText = "Add";
-                addButton.style = 'margin-left: 12px';
-                addButton.onclick = addTodo;
-                addButton.id = key.id;
-                element.appendChild(addButton);
-            })
-        }
+        // pitää luoda functio, joka lisää tuotteita
+        //         const addButton = document.createElement('button');
+        //         addButton.innerText = "Add";
+        //         addButton.style = 'margin-left: 12px';
+        //         addButton.onclick = addTodo;
+        //         addButton.id = key.id;
+        //         element.appendChild(addButton);
+        //     })
+        // }
 
 
 
