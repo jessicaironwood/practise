@@ -1,3 +1,19 @@
 body {
-    background-color: rgba(159, 159, 239, 0.806);
+    background-color: rgba(86, 164, 207, 0.806);
 }
+h1 {
+    font-weight: bold;
+    color: rgb(21, 0, 53);
+    margin: 3rem;
+    padding: 5%;
+}
+img {
+    max-width: 35%;
+    height: auto;
+    margin: 5% 16%;
+    /* padding: 3%; */
+  }
+
+/* classes*/
+
+/* ids */
