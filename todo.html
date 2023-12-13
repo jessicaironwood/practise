@@ -1,0 +1,341 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Jessica's Todo App</title>
+
+</head>
+
+<body>
+
+    <h1>Jessica</h1>
+
+    <h4>To Do</h4>
+
+
+    <input id="todo-title" type="text" />
+    <br>
+    <input id="date-picker" type="date" />
+    <br>
+    <button onclick="addTodo()">Add todo</button>
+    <!-- alert on tosi toimiva nappien testaukseen -->
+    <button onclick="markDone()" id="todo-button">Mark as done</button>
+
+    <br>
+
+    <br>
+
+    <div id="todo-list"></div>
+
+    <script>
+        const todos = [{
+            title: 'Learn',
+            dueDate: '2024-04-14',
+            id: 'id1'
+        }, {
+            title: 'Clean',
+            dueDate: '2023-11-21',
+            id: 'id2'
+        }, {
+            title: 'Something',
+            dueDate: '2023-12-15',
+            id: 'id3'
+        }];
+
+
+        render();
+
+        // todojen lisääminen
+        function addTodo() {
+            const textbox = document.getElementById('todo-title');
+            const title = textbox.value;
+
+            const datePicker = document.getElementById('date-picker');
+            const dueDate = datePicker.value;
+
+            const id = new Date().getTime();
+
+            todos.push({
+                title: title,
+                dueDate: dueDate,
+                id: id
+            });
+
+            render();
+        }
+
+        // todojen poisto
+        function deleteTodo(event) {
+            const deleteButton = event.target;
+            const idToDelete = deleteButton.id;
+             
+            todos.filter(function (todo) {
+
+            });
+
+        }
+
+        function render() {
+            //  reset the todo list
+            document.getElementById('todo-list').innerHTML = "";
+
+
+            todos.forEach((todo) => {
+                const element = document.createElement('div');
+                element.innerText = todo.title + " " + todo.dueDate;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = "Delete";
+                deleteButton.style = 'margin-left: 12px';
+                deleteButton.onclick = deleteTodo;
+                deleteButton.id = todo.id;
+                element.appendChild(deleteButton);
+
+                const todoList = document.getElementById("todo-list")
+                todoList.appendChild(element);
+            })
+        }
+
+
+        // ei tee mitään
+        function markDone() {
+
+            document.getElementById('todo-button').innerText = 'Done';
+            alert("well done")
+
+        }
+
+    </script>
+
+    <br> <br>
+    <!-- joku laskemisjuttu -->
+    <div id="counter">0</div>
+    <button id="up" onclick="clickUp()">Up</button>
+    <button id="down" onclick="clickDown()">Down</button>
+
+    <script>
+        let count = 0;
+        function clickUp() {
+            ++count;
+            document.getElementById('counter').innerText = count
+        }
+        function clickDown() {
+            --count;
+            document.getElementById('counter').innerText = count
+        }
+
+    </script>
+
+    <br> <br>
+
+    <h4>Shopping</h4>
+
+    <div id="cart"></div>
+
+
+    <!-- nämä napit ovat erillisiä alla olevasta receipt divistä -->
+    <button onclick="addApple()" id="apple">Apple</button>
+    <button onclick="addTomato()" id="tomato">Tomato</button>
+    <button onclick="addEggs()" id="eggs">Eggs</button>
+    <button onclick="clearList()" id="clearCart">Clear</button>
+    <br><br>
+    <div id="receipt"></div>
+
+    <!-- ostoskärryn luominen -->
+    <div id="createdCart"></div>
+
+    <script>
+
+        function addApple() {
+            const element = document.createElement('div');
+            element.innerText = "Apple";
+            cart.appendChild(element);
+        }
+
+        function addTomato() {
+            const element = document.createElement('div');
+            element.innerText = "Tomato";
+            cart.appendChild(element);
+        }
+
+        function addEggs() {
+            const element = document.createElement('div');
+            element.innerText = "Eggs";
+            cart.appendChild(element);
+        }
+
+        function clearList() {
+
+            cart.innerHTML = "";
+
+        }
+
+        // ostoskärry
+        const cartArray = [{
+            item: "Apple",
+            price: 0.5,
+            quantity: 2
+        }, {
+            item: "Tomato",
+            price: 0.3,
+            quantity: 5
+        }, {
+            item: "Orange",
+            price: 1,
+            quantity: 6
+        }, {
+            item: "Eggs",
+            price: 0.2,
+            quantity: 10
+        }];
+
+
+        // uusi ostoskärry
+        const cartNewArray = [{
+            item: "Apple",
+            price: 0.5,
+            quantity: 0,
+            id: "idA"
+        }, {
+            item: "Tomato",
+            price: 0.3,
+            quantity: 0,
+            id: "idB"
+        }, {
+            item: "Orange",
+            price: 1,
+            quantity: 0,
+            id: "idC"
+        }, {
+            item: "Eggs",
+            price: 0.2,
+            quantity: 0,
+            id: "idD"
+        }];
+        function cartTotal() {
+
+            let cartTotalPrice = 0;
+
+            for (let i = 0; i < cartArray.length; i++) {
+                let itemPrice = cartArray[i].price * cartArray[i].quantity;
+                cartTotalPrice = cartTotalPrice + itemPrice;
+            }
+            return "$ " + cartTotalPrice;
+
+        }
+        cartTotal();
+
+        // jotta addToCart -nappi tekee juttui
+        function addToCart(event) {
+            const addToCartButton = event.target;
+            const idToaddToCart = addToCartButton.id;
+            // joku toiminto
+        }
+
+        // ostoskärryn luominen id="createdCart", array= cartNewArray,1h02min
+        function createdCart() {
+            let total = 0;
+            const keys = Object.keys(cartNewArray);
+
+            document.getElementById('createdCart').innerHTML = ""
+            let element = document.createElement('div');
+            cartNewArray.forEach((key) => {
+                document.getElementById("createdCart").innerHTML = key.item + " " + key.price + " " +
+                let theTotal = document.createElement('div');
+                theTotal.innerText = "Cart total = " + cartTotal();
+                createdCart.appendChild(theTotal);
+
+        // pitää luoda functio, joka lisää tuotteita
+                const addToCartButton = document.createElement('button');
+                addToCartButton.innerText = "Add";
+                addToCartButton.style = 'margin-left: 12px';
+                addToCartButton.onclick = addToCart;
+                addToCartButton.id = key.id;
+                element.appendChild(addToCartButton);
+            })
+        }
+        createdCart();
+
+
+        // kuitti
+
+        function displayReceipt() {
+            // reset the receipt
+            document.getElementById('receipt').innerHTML = ""
+
+            // kuitti
+            let element = document.createElement('div');
+            cartArray.forEach((item) => {
+                let itemPrice = item.price * item.quantity;
+
+                document.getElementById("receipt").innerHTML = item.item + " " + item.quantity + " = $" + itemPrice;
+
+                receipt.appendChild(element);
+                // yhteishinta:
+                let displayTotal = document.createElement('div');
+                displayTotal.innerText = "Cart total = " + cartTotal();
+                receipt.appendChild(displayTotal);
+            })
+
+
+
+        }
+
+        displayReceipt();
+
+    </script>
+    <br>
+
+    <h4>Coverter in cm</h4>
+
+    <!-- inches to cm converter -->
+    <input id="converterInput" type="number" />
+    <button onclick="convertToCm()" id="converterBtnCm">Convert to cm</button>
+    <button onclick="convertToIn()" id="converterBtnIn">Convert to inch</button>
+    <div id="result"> </div>
+
+
+    <script>
+
+        function convertToCm() {
+            const numberBox = document.getElementById("converterInput");
+            const numTitle = numberBox.value;
+            const numberMeh = numTitle * 2.54;
+            const numberRounded = numberMeh.toFixed(2);
+            const element = document.createElement('div');
+            element.innerText = numberRounded;
+            result.appendChild(element);
+
+        }
+
+        function convertToIn() {
+            const numberBox = document.getElementById("converterInput");
+            const numTitle = numberBox.value;
+            const numberMeh = numTitle / 2.54;
+            const numberRounded = numberMeh.toFixed(2);
+            const element = document.createElement('div');
+            element.innerText = numberRounded;
+            result.appendChild(element);
+
+        }
+
+        // harjoitukset 12 
+        function toUpperCase () {
+            let strVar = prompt("Input a text:");
+            strVar = strVar.toLocaleUpperCase;
+            return strVar;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
