@@ -1,0 +1,38 @@
+body {
+    background-color: 96EFFF;
+}
+
+h1 {
+    font-weight: bold;
+    color: 7B66FF;
+   
+}
+
+img {
+    max-width: 35%;
+    height: auto;
+    
+  }
+
+  p {
+    max-width: 40%;
+  }
+
+  /* väripaletti: C5FFF8    96EFFF  5FBDFF  7B66FF  */
+
+/* classes*/
+.otsikko {
+    margin: 3% 15% 5%;
+    padding: 5%;
+}
+
+.about {
+    margin: 3rem;
+    padding: 5%;
+}
+
+.exhibitions {
+    margin: 3rem;
+    padding: 5%;
+}
+/* ids */
