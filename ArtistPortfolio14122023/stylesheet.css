@@ -1,5 +1,10 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
 body {
     background-color: 96EFFF;
+    margin: 0;
 }
 
 h1 {
@@ -8,11 +13,14 @@ h1 {
    
 }
 
+h2 {
+    color: 7B66FF;
+}
+
 img {
-    max-width: 35%;
+    max-width: 55%;
     height: auto;
-    
-  }
+    } 
 
   p {
     max-width: 40%;
@@ -21,12 +29,45 @@ img {
   /* väripaletti: C5FFF8    96EFFF  5FBDFF  7B66FF  */
 
 /* classes*/
-.otsikko {
-    margin: 3% 15% 5%;
+.about {
+    margin: 3rem;
     padding: 5%;
 }
 
-.about {
+.carousel-btn {
+    background: none;
+    background-color: rgba(0, 0, 0, .1);
+    border: none;
+    border-radius: .25rem;
+    color: rgba(255, 255, 255, .5 );
+    cursor: pointer;
+    font-size:4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 .5rem;
+    position: absolute;
+    z-index: 2;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+    background-color: rgba(0, 0, 0, .2);
+    color: white;
+} 
+
+.carousel-btn:focus {
+    outline: 1px solid black;
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.contact {
     margin: 3rem;
     padding: 5%;
 }
@@ -35,4 +76,50 @@ img {
     margin: 3rem;
     padding: 5%;
 }
+
+.footer {
+    background-color: C5FFF8;
+    /* height: 0.5rem; */
+    padding: 0.57rem;
+    font-weight: lighter;
+}
+
+.karuselli {
+    height: 100vh;
+    position: relative;
+    width: 100vh;
+}
+
+.karuselli > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.otsikko {
+    margin: 3% 15% 5%;
+    padding: 5%;
+}
+
+.slide {
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide > img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    transition-delay: 0;
+}
+
 /* ids */
