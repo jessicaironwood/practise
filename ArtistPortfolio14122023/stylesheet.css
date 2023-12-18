@@ -120,6 +120,7 @@ img {
 .slide[data-active] {
     opacity: 1;
     transition-delay: 0;
+    z-index: 1;
 }
 
 /* ids */
